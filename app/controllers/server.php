@@ -29,7 +29,7 @@ class ServerController extends BaseController {
 		$this->webServers["<a href=\"http://www.php.net\" target=\"_blank\">PHP version</a>"] = "PHP " . PHP_VERSION;
 		$this->webServers["<a href=\"http://www.php.net/mongo\" target=\"_blank\">PHP extension</a>"] = "<a href=\"http://pecl.php.net/package/mongo\" target=\"_blank\">mongo</a>/" . RMongo::getVersion();
 
-		$this->directives = ini_get_all("mongo");
+		$this->directives = @ini_get_all("mongo");
 
 		//build info
 		$this->buildInfos = array();
